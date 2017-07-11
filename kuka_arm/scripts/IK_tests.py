@@ -107,9 +107,10 @@ c = sqrt(a**2 + b**2) ## Length J2 - wc
 
 # Use cosine rule to find theta3 and allow for offset
 costheta3 = (a2**2 + d4**2 - c**2)/(2 * a2 * d4)
+if costheta3 >1:
+    costheta3 = 1
 #so
-theta3 = atan2(costheta3, sqrt(1 - costheta3**2))
-
+theta3 = atan2(sqrt(1 - costheta3**2), costheta3)
 # Find elevation angle from J2 to J5
 theta21 = atan2(b, a)
 # Then angle between a2 and c (length J2 - J5)
