@@ -22,6 +22,7 @@
 [image2]: ./misc_images/theta_1.png
 [image3]: ./misc_images/theta_2_3.png
 [image4]: ./misc_images/cosine.gif
+[image5]: ./misc_images/frames.png
 
 [//]: # (Footnotes)
 
@@ -32,7 +33,6 @@
 
 ---
 ### Writeup / README
-
 #### 1. Provide a Writeup / README that includes all the rubric points and how you addressed each one.  
 
 This Writeup should fulfill the requirement of the first Rubric
@@ -55,10 +55,13 @@ G | 0.11 | 0.0 | 0.0 | y
 
 In transforming this data into D-H values, the following rules were followed:
 
-	1. In describing reference frames for each joint, the z-axis is along the joint rotational axis.
-	2. common normals should be identified between joint reference frames.
-	3. Where possible parameters should ideally be zero.
-	4. Where links are coincident with joint axes, the sum of the link lengths is to be assigned to the link furthest from the last perpendicular joint axis.
+1. In describing reference frames for each joint, the z-axis is along the joint rotational axis. (See figure below)
+2. common normals should be identified between joint reference frames.
+3. Where possible parameters should ideally be zero.
+4. Where links are coincident with joint axes, the sum of the link lengths is to be assigned to the link furthest from the last perpendicular joint axis.
+
+![alt text][image5]
+
 
 This enabled me to produce the following D-H Parameter Table:
 
