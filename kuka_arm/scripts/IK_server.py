@@ -46,8 +46,8 @@ def handle_calculate_IK(req):
 
             s = {alpha0: 0,        a0: 0,        d1: 0.75,
                 alpha1: -pi/2,    a1: 0.35,     d2: 0,
-                alpha2: 0,        a2: 1.25,     d3: 0,        q2: q2-(pi/2 + 0.06),
-                alpha3: -pi/2,    a3: -0.54,    d4: 1.50,     q3: q3 - 0.21099,
+                alpha2: 0,        a2: 1.25,     d3: 0,        q2: q2-(pi/2 + 0.065),
+                alpha3: -pi/2,    a3: -0.54,    d4: 1.50,     q3: q3 - 0.210,
                 alpha4: pi/2,     a4: 0,        d5: 0,
                 alpha5: -pi/2,    a5: 0,        d6: 0,
                 alpha6: 0,        a6: 0,        d7: 0.303,    q7: 0}
@@ -146,8 +146,10 @@ def handle_calculate_IK(req):
 
             # Use cosine rule to find theta3 and allow for offset
             costheta3 = (a2**2 + d4**2 - c**2)/(2 * a2 * d4)
+            if costheta3 >1:
+                costheta3 = 1
             #so
-            theta3 = atan2(costheta3, sqrt(1 - costheta3**2))
+            theta3 = atan2(sqrt(1 - costheta3**2), costheta3)
 
             # Find elevation angle from J2 to J5
             theta21 = atan2(b, a)
